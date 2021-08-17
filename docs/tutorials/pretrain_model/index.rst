@@ -9,11 +9,17 @@
    预训练分词Subword <subword>
    ELMo <ELMo>
    Transformer <transformer>
+   Transformer-XL <Transformer-XL>
+   Longformer <longformer>
    GPT <GPT>
+   XLNet <XLNet>
    BERT <bert>
+   RoBERTa <RoBERTa>
    ERINE <erine>
+   ERNIE-Gram <ERNIE-Gram>
+   THU-ERNIE <THU-ERNIE>
+   KBERT <KBERT>
    ALBERT <ALBERT>  
    ELECTRA <ELECTRA>
-
-
+   Performer <Performer>
 

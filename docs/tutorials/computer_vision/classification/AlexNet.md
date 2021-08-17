@@ -2,17 +2,17 @@
 
 ## 模型介绍
 
-AlexNet是2012年ImageNet竞赛的冠军模型，其作者是神经网络领域三巨头之一的Hinton和他的学生Alex Krizhevsky。
+AlexNet<sup>[1]</sup>是2012年ImageNet竞赛的冠军模型，其作者是神经网络领域三巨头之一的Hinton和他的学生Alex Krizhevsky。
 
 AlexNet以极大的优势领先2012年ImageNet竞赛的第二名，也因此给当时的学术界和工业界带来了很大的冲击。此后，更多更深的神经网络相继被提出，比如优秀的VGG，GoogLeNet，ResNet等。 
 
 ## 模型结构
 
-
 AlexNet与此前的LeNet相比，具有更深的网络结构，包含5层卷积和3层全连接，具体结构如 **图1** 所示。
 
-<center><img src="https://raw.githubusercontent.com/lvjian0706/Deep-Learning-Img/master/CNN/Classical_model/AlexNet.png" width = "1000"></center>
-<center><br>图1 AlexNet模型网络结构示意图</br></center>
+![图1 AlexNet模型网络结构示意图](../../../images/computer_vision/classification/AlexNet.png)
+
+<center>图1 AlexNet模型网络结构示意图</center><br></br>
 
 1）第一模块：对于$224\times 224$的彩色图像，先用96个$11\times 11\times 3$的卷积核对其进行卷积，提取图像中包含的特征模式（步长为4，填充为2，得到96个$54\times 54$的卷积结果（特征图）；然后以$2\times 2$大小进行池化，得到了96个$27\times 27$大小的特征图；
 
@@ -109,8 +109,9 @@ AlexNet将LeNet的思想发扬光大，把CNN的基本原理应用到了很深�
 
 AlexNet 作为 ImageNet 2012比赛的冠军算法，在 ImageNet 测试集上达到了 15.3% 的 top-5 error rate，远远超过第二名（SIFT+FVs）的 26.2% 。如 **图2** 所示。
 
-<center><img src="https://raw.githubusercontent.com/lvjian0706/Deep-Learning-Img/master/CNN/Classical_model/AlexNet_Error_Rate.png" width = "1000"></center>
-<center><br>图2 AlexNet模型指标</br></center>
+![图2 AlexNet模型指标](../../../images/computer_vision/classification/AlexNet_Error_Rate.png)
+
+<center>图2 AlexNet模型指标</center><br></br>
 
 ## 参考文献
 

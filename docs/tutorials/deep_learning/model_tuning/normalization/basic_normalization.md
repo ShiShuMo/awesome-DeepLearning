@@ -37,14 +37,10 @@ $$
 
 可将该损失函数寻求最优解过程可视化为下图：
 
+![normalization](../../../../images/deep_learning/model_tuning/normalization/normalization.png)
 
+<center>图1: 损失函数的等高线，图1（左）为未归一化时，图1（右）为归一化</center><br></br>
 
-<center><img src="https://github.com/ZhangHandi/images-for-paddledocs/blob/main/images/normalization/normalization.png?raw=true" style="zoom:50%;" /></center>
-
-<center>
-  图1: 损失函数的等高线，图1（左）为未归一化时，图1（右）为归一化后
-  <br></br>
-</center>
 
 在图1中，左图的红色椭圆代表归一化前的损失函数等高线，蓝色线段代表梯度的更新，箭头的方向代表梯度更新的方向。寻求最优解的过程就是梯度更新的过程，其更新方向与登高线垂直。由于$x_1$ 和 $x_2$ 的量级相差过大，损失函数的等高线呈现为一个瘦窄的椭圆。因此如图1（左）所示，瘦窄的椭圆形会使得梯度下降过程呈之字形呈现，导致梯度下降速度缓慢。
 
@@ -131,13 +127,9 @@ $$
 
 在查找资料的时候，我看到很多文章都提出了：“在分类、聚类算法中，需要使用距离来度量相似性的时候，z-score归一化也就是标准化的效果比归一化要好，但是对于这个观点并没有给出足够的技术支持。因此，我选取了KNN分类网络搜索了相关论文，在论文Comparative Analysis of KNN Algorithm using Various Normalization Techniques <sup><a href="#ref1">[1]</a></sup> 中，在K值不同的情况下，对于相同的数据分别进行min-max归一化和z-score归一化，得到的结果如下图所示：
 
-<center><img src="https://github.com/ZhangHandi/images-for-paddledocs/blob/main/images/normalization/Comparative%20Analysis%20of%20KNN%20Algorithm.png?raw=true" style="zoom:40%;" /></center>
+![Comparative_Analysis_of_KNN_Algorithm](../../../../images/deep_learning/model_tuning/normalization/Comparative_Analysis_of_KNN_Algorithm.png)
 
-<center>
-  图2: 对于不同的K值，相同数据集不同归一化方式下的预测精确度
-  <br></br>
-</center>
-
+<center>图2: 对于不同的K值，相同数据集不同归一化方式下的预测精确度</center><br></br>
 
 由此可以看到，至少对于KNN分类问题，z-score归一化和min-max归一化的选择会受到数据集、K值的影响，对于其他的分类和聚类算法，哪一种归一化的方法更好仍有待验证。最好的选择方法就是进行实验，选择在当前实验条件下，能够使模型精度更高的一种。
 
@@ -145,7 +137,7 @@ $$
 
 谈到归一化和标准化可能会存在一些概念的混淆，我们都知道归一化是指normalization，标准化是指standardization，但根据wiki上对feature scaling方法的定义，standardization其实就是z-score normalization，也就是说标准化其实是归一化的一种，而一般情况下，我们会把z-score归一化称为标准化，把min-max归一化简称为归一化。在下文中，我们也是用标准化指代z-score归一化，并使用归一化指代min-max归一化。
 
-其实，归一化和标准化在本质上都是一种线性变换。在`4.归一化有哪些类型`中，我们提到了归一化和标准化的公式，对于归一化的公式，在数据给定的情况下，可以令$a = min(x)、b = max(x) - min(x)$，则归一化的公式可变形为：
+其实，归一化和标准化在本质上都是一种线性变换。在`4.归一化有哪些类型`中，我们提到了归一化和标准化的公式，对于归一化的公式，在数据给定的情况下，可以令$a = max(x) - min(x)、b = min(x)$，则归一化的公式可变形为：
 
 
 $$
